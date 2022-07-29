@@ -11,18 +11,20 @@
 define(
     [
         'uiComponent',
-        'ko'
+        'ko',
+        'mage/storage'
     ],
     function (
         Component,
-        ko
+        ko,
+        storage
     ) {
         'use strict';
         return Component.extend({
             defaults:{
                 // Best approach to write in xml file so easy override
                 // template: 'PHPStudios_KnockoutPractice/sku-lookup',
-                sku: ko.observable('ABC123'),
+                sku: ko.observable('24-MB01'),
                 placeholder: 'Example: 24-MB01 '
             },
             initialize(){
@@ -31,7 +33,10 @@ define(
             },
             handleSubmit()
             {
-                console.log(this.sku()+'  SKU Confirmed');
+                storage.get(`rest/V1/products/${this.sku()}`)
+                    .done(response =>{
+                        console.log(response);
+                    })
             }
         });
     }
