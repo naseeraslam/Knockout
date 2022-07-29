@@ -22,11 +22,16 @@ define(
             defaults:{
                 // Best approach to write in xml file so easy override
                 // template: 'PHPStudios_KnockoutPractice/sku-lookup',
-                sku: ko.observable('ABC123')
+                sku: ko.observable('ABC123'),
+                placeholder: 'Example: 24-MB01 '
             },
             initialize(){
                 this._super();
                 console.log('Woww Naseer You did stunning job');
+            },
+            handleSubmit()
+            {
+                console.log(this.sku()+'  SKU Confirmed');
             }
         });
     }

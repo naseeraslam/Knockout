@@ -8,9 +8,12 @@
   -->
 
 <div class="sku-lookup">
-    <h2>SKU LOOK Up Naseer</h2>
-    <input id="sku" name="sku" type="text" data-bind="value:sku"/>
-    <div data-bind="text: sku">
-    </div>
+    <h2>SKU Lookup</h2>
+    <form data-bind="click: handleSubmit">
+        <input id="sku" class="sku" name="sku" type="text" data-bind="value:sku,attr:{placeholder: placeholder}"/>
+        <button type="submit" class="sku-button" >Confirm Sku</button>
+        <div data-bind="text: sku">
+        </div>
+    </form>
 </div>
 
