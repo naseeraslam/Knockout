@@ -1,0 +1,1 @@
+/Users/mac/Sites/magento243p1/vendor/magento/module-checkout/view/frontend/web/js/view/minicart.js
