@@ -12,12 +12,14 @@ define(
     [
         'uiComponent',
         'ko',
-        'mage/storage'
+        'mage/storage',
+        'jquery'
     ],
     function (
         Component,
         ko,
-        storage
+        storage,
+        $
     ) {
         'use strict';
         return Component.extend({
@@ -35,6 +37,7 @@ define(
             },
             handleSubmit()
             {
+                $('body').trigger('processStart');
                 this.messageResponse('');
                 this.isSuccess(false);
                 storage.get(`rest/V1/products/${this.sku()}`)
@@ -46,6 +49,11 @@ define(
                         this.messageResponse(`Product not found!`);
                         this.isSuccess(false);
                     })
+                    .always(()=>
+                        {
+                            $('body').trigger('processStop');
+                        }
+                    );
             }
         });
     }
