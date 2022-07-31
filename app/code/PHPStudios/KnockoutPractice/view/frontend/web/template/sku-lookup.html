@@ -8,11 +8,14 @@
   -->
 
 <div class="sku-lookup">
-    <h2>SKU Lookup Here</h2>
+    <h2><!-- ko i18n: 'SKU Lookup' --><!-- /ko --></h2>
+    <h2 data-bind="i18n:'SKU Lookup'"></h2>
+    <!-- Both are alternate of each other -->
+    <h3><translate args="'Naseer is Here'"/></h3>
     <form data-bind="click: handleSubmit">
         <input id="sku" class="sku" name="sku" type="text" data-bind="value:sku,attr:{placeholder: placeholder}"/>
         <button type="submit" class="sku-button" >Confirm Sku</button>
-        <div data-bind="html: messageResponse">
+        <div data-bind="html: messageResponse,style:{color:isSuccess() ? 'green' : 'red'}">
         </div>
     </form>
 </div>
