@@ -1,4 +1,4 @@
-<!--
+ <!--
   ~ /*
   ~  * Copyright (c) 2022.
   ~  * Code by MUHAMMAD NASEER ASLAM.
@@ -8,11 +8,11 @@
   -->
 
 <div class="sku-lookup">
-    <h2>SKU Lookup</h2>
+    <h2>SKU Lookup Here</h2>
     <form data-bind="click: handleSubmit">
         <input id="sku" class="sku" name="sku" type="text" data-bind="value:sku,attr:{placeholder: placeholder}"/>
         <button type="submit" class="sku-button" >Confirm Sku</button>
-        <div data-bind="text: sku">
+        <div data-bind="html: messageResponse">
         </div>
     </form>
 </div>
