@@ -12,7 +12,7 @@
     <form data-bind="click: handleSubmit">
         <input id="sku" class="sku" name="sku" type="text" data-bind="value:sku,attr:{placeholder: placeholder}"/>
         <button type="submit" class="sku-button" >Confirm Sku</button>
-        <div data-bind="html: messageResponse">
+        <div data-bind="html: messageResponse,style:{color:isSuccess() ? 'green' : 'red'}">
         </div>
     </form>
 </div>
