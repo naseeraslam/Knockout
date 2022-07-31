@@ -26,6 +26,17 @@
                                 </item>
                             </item>
                         </item>
+                        <!--- multiple knockout components in a single view file -->
+                        <item name="boxConfigurations" xsi:type="array">
+                            <item name="component" xsi:type="string">
+                                PHPStudios_KnockoutPractice/js/box-configurations
+                            </item>
+                            <item name="config" xsi:type="array">
+                                <item name="template" xsi:type="string">
+                                    PHPStudios_KnockoutPractice/box-configurations
+                                </item>
+                            </item>
+                        </item>
                     </item>
                 </argument>
             </arguments>

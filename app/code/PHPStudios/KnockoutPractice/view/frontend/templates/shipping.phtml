@@ -10,11 +10,14 @@
 
 /** @var $block Magento\Framework\View\Element\Template */
 ?>
-<div id="shipping-plan" data-bind="scope: 'skuLookup'">
-    <div id="sku-lookup">
+<div id="shipping-plan"">
+    <div id="sku-lookup" data-bind="scope: 'skuLookup'">
         <!-- ko template: getTemplate()   --><!-- /ko -->
     </div>
-
+  <!-- scope name is component name which is written its view related xml file -->
+   <div id="box-configurations" data-bind="scope: 'boxConfigurations'">
+      <!-- ko template: getTemplate()   --><!-- /ko -->
+   </div>
 </div>
 <script type="text/x-magento-init">
 {
