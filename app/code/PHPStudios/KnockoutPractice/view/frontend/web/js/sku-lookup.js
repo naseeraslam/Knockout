@@ -25,7 +25,8 @@ define(
                 // Best approach to write in xml file so easy override
                 // template: 'PHPStudios_KnockoutPractice/sku-lookup',
                 sku: ko.observable('24-MB01'),
-                placeholder: 'Example: 24-MB01 '
+                placeholder: 'Example: 24-MB01 ',
+                messageResponse: ko.observable('')
             },
             initialize(){
                 this._super();
@@ -35,7 +36,7 @@ define(
             {
                 storage.get(`rest/V1/products/${this.sku()}`)
                     .done(response =>{
-                        console.log(response);
+                        this.messageResponse(`Product found! <strong>${response.name}`);
                     })
             }
         });
