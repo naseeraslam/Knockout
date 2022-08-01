@@ -9,5 +9,26 @@
 
 <div class="box-configurations">
     <h2 data-bind="i18n:'Box Configurations'"></h2>
+    <ul data-bind="foreach: boxConfigurations">
+        <li>
+            <!-- ko i18n: 'Configuration' --><!-- /ko -->
+            <!-- ko text: $index()+1 --><!-- /ko -->:
+            <span data-bind="text: $data"></span>
+        </li>
+        <!-- $ data is just here we are iterating foreach loop
+           foreach($boxConfiguration as $data) -->
+        <!-- $index is iterating index of array -->
+        <!-- both $data and $index are fixed we can't use other alternate variables -->
+    </ul>
+    <!-- Alternate of it with virtual element -->
+
+    <h3>Virtual element practice</h3>
+    <!-- ko foreach: boxConfigurations -->
+        <div>
+            <!-- ko i18n: 'Configuration' --><!-- /ko -->
+            <!-- ko text: $index()+1 --><!-- /ko -->:
+            <!-- ko text: $data --><!-- /ko -->
+        </div>
+    <!-- /ko -->
 </div>
 
