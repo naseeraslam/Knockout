@@ -10,16 +10,19 @@
 
 define(
     [
-        'uiComponent'
+        'uiComponent',
+        'ko'
     ],
     function (
-        Component
+        Component,
+        ko
     ) {
         'use strict';
         return Component.extend({
             defaults:{
                 // Best approach to write in xml file so easy override
                 // template: 'PHPStudios_KnockoutPractice/sku-lookup'
+                boxConfigurations: ko.observableArray(['abc','def '])
             },
             initialize(){
                 this._super();
